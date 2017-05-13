@@ -30,7 +30,41 @@
       background: yellow;
       color: blue;
     }
+    #gotop {
+      display: none;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      padding: 10px 15px;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+    }
   </style>
+  <div id="gotop">˄</div>
+  <script src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+  <script type='text/javascript'>
+    $(function(){
+      $("#gotop").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:0
+        },1000);
+      });
+      $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300){
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+      });
+    });
+    $(function(){
+    $("#b1").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:300
+        },1000);
+    });
+  </script>
   <head>
     <meta charset="utf-8">
     <title>Carbon trading</title>
